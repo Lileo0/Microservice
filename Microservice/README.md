@@ -16,6 +16,15 @@ Here is an example Request:
 
 curl --location "http://localhost:9090/api/calc" --header "Content-Type: application/json" --data "{ \"number1\": 1, \"number2\": 2, \"operation\": \"+\" }"
 
+The following command is used for building the docker image.
+
+docker build -t calculator:1 .
+
+The following command is used for starting a container with the application.
+
+docker run -p 9090:9090 calculator:1 .
+
+
 # Notes:
 
 Currently, the microservice is using an in memory h2 database, and it can be started. If you want to bind your own database to it please edit/uncomment the database settings in the application-dev.yaml file and add your own parameters. 

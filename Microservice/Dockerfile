@@ -7,4 +7,4 @@ FROM openjdk:17
 EXPOSE 9090
 COPY --from=build /home/gradle/src/build/libs/Microservice-0.0.1-SNAPSHOT.jar /app/
 RUN bash -c 'touch /app/Microservice-0.0.1-SNAPSHOT.jar'
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions","-Dspring.profiles.active=dev", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/Microservice-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=dev","-jar","/app/Microservice-0.0.1-SNAPSHOT.jar"]
