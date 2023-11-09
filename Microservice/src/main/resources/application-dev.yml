@@ -1,6 +1,17 @@
 server:
   port: 9090
 
+
 spring:
   datasource:
-    url:
+   # url: jdbc:postgresql://localhost:5432/test_db
+   # username: root
+   # password: root
+  liquibase:
+    change-log: classpath:/changelog.xml
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

@@ -1,10 +1,13 @@
-version: '3.8'
 
+version: "3.8"
 services:
   db:
-    image: postgres:latest
+    container_name: postgres_container
+    image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: Microservice
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
     ports:
-      - "8080"
+      - "5432:5432"

@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.3"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
+	id("org.liquibase.gradle") version "2.2.0"
 }
 
 group = "com.lileo0"
@@ -29,11 +30,17 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 // https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
-	implementation("org.springframework.data:spring-data-jpa:3.1.5")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation ("org.springframework.boot:spring-boot-starter-actuator")
+	implementation ("org.liquibase:liquibase-core")
+	implementation("org.zalando:logbook-spring-boot-starter:3.0.0")
+	implementation ("org.postgresql:postgresql")
+	implementation("com.h2database:h2")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("com.h2database:h2")
 }
 
 tasks.withType<KotlinCompile> {
