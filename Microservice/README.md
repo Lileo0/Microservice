@@ -17,6 +17,9 @@ Here is an example Request:
 
 curl --location "http://localhost:9090/api/calc" --header "Content-Type: application/json" --data "{ \"number1\": 1, \"number2\": 2, \"operation\": \"+\" }"
 
+
+ALL COMMANDS HAVE TO BE RUN IN THIS FOLDER
+
 The following command is used for building the docker image.
 
 docker build -t calculator:1 .
