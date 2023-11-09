@@ -3,7 +3,7 @@ Microservice for "Software Entwicklung"
 
 https://github.com/Lileo0/Microservice
 
-## How to start the programm:
+## How to start the programs:
 
 First build the module Microservice which is contained in this same folder.
 
